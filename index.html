@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+          
+     <link rel="icon" type="image/png" href="icons8-connect-128.png">
+
+    <title>Connect One </title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05070b;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: #ff4d00;
+            opacity: 0.06;
+            filter: blur(150px);
+            border-radius: 50%;
+            top: 100px;
+            right: -200px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #7b2cff;
+            opacity: 0.05;
+            filter: blur(150px);
+            border-radius: 50%;
+            bottom: 0;
+            left: -200px;
+            z-index: -1;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            width: 100%;
+            height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            background: rgba(3, 5, 9, 0.95);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(15px);
+        }
+
+
+        /* LOGO */
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .main-logo {
+            width: 200px;
+            height: 290px;
+            margin-left: -100px;
+            margin-top: 40px;
+
+            /* object-fit: contain; */
+        }
+
+        .brand-name {
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-left: -80px;
+        }
+
+        .brand-name span {
+            color: #ff5700;
+        }
+
+
+        /* NAV LINKS */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 38px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            color: #ddd;
+
+            position: relative;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff5a00;
+        }
+
+        .nav-links a.active {
+            color: #ff5a00;
+        }
+
+        .nav-links a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -10px;
+
+            width: 100%;
+            height: 2px;
+
+            background: #ff5700;
+        }
+
+
+        /* DEVELOPER */
+
+        .developer {
+            display: flex;
+            /* align-items: center; */
+            gap: 12px;
+
+            
+
+            
+        }
+
+        .developer-logo {
+            width: 200px;
+            height: 290px;
+            margin-top: 30px;
+            
+            
+            
+           
+         
+        }
+
+        /* .developer-info small {
+            display: block;
+
+            color: #ff6200;
+
+            font-size: 12px;
+
+            margin-bottom: 4px;
+        } */
+
+        /* .developer-info strong {
+            display: block;
+
+            font-size: 14px;
+        }
+
+        .developer-info a {
+            color: #aaa;
+            font-size: 12px;
+        } */
+          /* .mail
+         {
+            color: rgb(255, 255, 255);
+            background-color: orangered;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 1px 1px 20px orangered;
+         } */
+
+        /* .mail:hover {
+            color: rgb(250, 246, 244);
+            background:linear-gradient(to rgb(231, 144, 4) rgb(255, 0, 106));
+            box-shadow: 1px 1px 50px orangered;
+        }   */
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 530px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 70px 8%;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 80% 40%,
+                    rgba(255,80,0,0.13),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #06080d,
+                    #090b12
+                );
+        }
+
+
+        /* ORANGE DECORATION */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,80,0,0.3);
+
+            right: -180px;
+            top: 50px;
+
+            box-shadow:
+                0 0 80px rgba(255,80,0,0.15);
+        }
+
+
+        /* HERO TEXT */
+
+        .hero-content {
+            width: 55%;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .hero-small {
+            color: #ff5b00;
+
+            font-size: 14px;
+
+            letter-spacing: 5px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 82px);
+
+            line-height: 0.98;
+
+            margin-bottom: 25px;
+
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #ff5900;
+        }
+
+        .hero-line {
+            width: 90px;
+            height: 4px;
+
+            background: #ff5900;
+
+            margin-bottom: 22px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+
+            color: #b9bec8;
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* SEARCH */
+
+        .search-box {
+            width: 520px;
+            max-width: 100%;
+
+            height: 58px;
+
+            border: 1px solid #ff5b00;
+
+            border-radius: 50px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 5px 7px 5px 22px;
+
+            background: rgba(0,0,0,0.4);
+        }
+
+        .search-box i {
+            color: #aaa;
+
+            margin-right: 15px;
+        }
+
+        .search-box input {
+            flex: 1;
+
+            border: none;
+            outline: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 15px;
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+        }
+
+        .search-button {
+            width: 46px;
+            height: 46px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: #ff5a00;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .search-button:hover {
+            transform: rotate(20deg) scale(1.1);
+        }
+
+
+        /* HERO LOGO */
+
+        .hero-logo {
+            position: absolute;
+
+            right: 13%;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 290px;
+            height: 290px;
+
+            border-radius: 50%;
+
+            border: 2px solid #ff5a00;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow:
+                0 0 30px rgba(255,80,0,0.4),
+                inset 0 0 40px rgba(255,80,0,0.1);
+
+            animation: glow 3s infinite alternate;
+        }
+
+        .hero-logo img {
+            width: 170px;
+            height: 170px;
+
+            object-fit: contain;
+        }
+
+        @keyframes glow {
+
+            from {
+                box-shadow:
+                    0 0 20px rgba(255,80,0,0.3);
+            }
+
+            to {
+                box-shadow:
+                    0 0 70px rgba(255,80,0,0.7);
+            }
+
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            padding: 60px 5% 80px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #070a10,
+                    #05070b
+                );
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-title h2 span {
+            color: #ff5a00;
+        }
+
+        .section-title p {
+            color: #888;
+
+            font-size: 16px;
+        }
+
+
+        /* SERVICE GRID */
+
+        .service-grid {
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* SERVICE CARD */
+
+        .service-card {
+            min-height: 150px;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.08),
+                rgba(255,255,255,0.02)
+            );
+
+            transition:
+                transform 0.35s,
+                border-color 0.35s,
+                box-shadow 0.35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #ff5a00;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.5),
+                0 0 25px rgba(255,80,0,0.12);
+        }
+
+
+        /* CARD ICON */
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 23px;
+
+            background: rgba(255,255,255,0.1);
+
+            margin-bottom: 18px;
+        }
+
+
+        /* CARD TEXT */
+
+        .service-card h3 {
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: #aaa;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ARROW */
+
+        .service-arrow {
+            position: absolute;
+
+            right: 18px;
+            bottom: 18px;
+
+            width: 34px;
+            height: 34px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255,255,255,0.12);
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover .service-arrow {
+            background: #ff5a00;
+
+            transform: translateX(5px);
+        }
+
+
+        /* CARD COLORS */
+
+        .blue .service-icon {
+            color: #42a5ff;
+        }
+
+        .green .service-icon {
+            color: #20e38c;
+        }
+
+        .orange .service-icon {
+            color: #ff9d00;
+        }
+
+        .purple .service-icon {
+            color: #a66cff;
+        }
+
+        .pink .service-icon {
+            color: #ff4f9a;
+        }
+
+        .cyan .service-icon {
+            color: #20d9e8;
+        }
+
+        .red .service-icon {
+            color: #ff5959;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 30px 5%;
+
+            text-align: center;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            background: #04060a;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #ff5900;
+        }
+
+
+        /* =========================
+           MOBILE MENU BUTTON
+        ========================== */
+
+        .menu-button {
+            display: none;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            color: white;
+        }
+
+        .mail {
+    position: relative;
+
+    display: inline-block;
+
+    color: #dad0cb;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border: 1px solid #ff5a00;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+
+    animation: developerPulse 2s infinite;
+}
+
+
+/* Orange light moving inside button */
+
+.mail::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 90, 0, 0.35),
+        transparent
+    );
+
+    transition: 0.5s;
+}
+
+
+/* Hover */
+
+/* .mail:hover {
+    color: white;
+
+    background: #ff5a00;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 10px #ff5a00,
+        0 0 25px rgba(255,90,0,0.6),
+        0 0 45px rgba(255,90,0,0.3);
+} */
+
+
+/* Light animation */
+
+.mail:hover::before {
+    left: 100%;
+}
+
+
+/* Pulse animation */
+
+@keyframes developerPulse {
+
+    0% {
+        box-shadow: 0 0 0 rgba(255,90,0,0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 12px rgba(255,90,0,0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 0 rgba(255,90,0,0);
+    }
+
+}
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width:1200px) {
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(4, 1fr);
+            }
+
+            .hero-logo {
+                right: 7%;
+            }
+
+        }
+
+
+        @media(max-width:950px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .developer {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .hero {
+                padding: 70px 7%;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-logo {
+                opacity: 0.12;
+
+                width: 400px;
+                height: 400px;
+
+                right: -100px;
+            }
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media(max-width:700px) {
+
+            .navbar {
+                height: 75px;
+
+                padding: 0 5%;
+            }
+
+            .main-logo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .brand-name {
+                font-size: 23px;
+            }
+
+            .hero {
+                min-height: 550px;
+
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .hero-logo {
+                width: 300px;
+                height: 300px;
+
+                right: -120px;
+            }
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 14px;
+            }
+
+            .service-card {
+                min-height: 165px;
+
+                padding: 18px;
+            }
+
+            .service-card h3 {
+                font-size: 15px;
+            }
+
+            .service-card p {
+                font-size: 12px;
+            }
+
+        }
+
+
+        @media(max-width:450px) {
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-small {
+                font-size: 11px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo-area">
+
+            <img src="logo 2.png"
+                 class="main-logo"
+                 alt="Connect One Logo">
+
+            <div class="brand-name">
+                Connect <span>One</span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#" class="active">
+                Home
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- Developer -->
+
+        <!-- <a href="#" class="developer">
+
+            <img src="cont logo1.png"
+                 class="developer-logo"
+                 alt="Developer Logo"> -->
+                 
+        </a>
+
+            <!-- <div class="developer-info">
+
+                <small>
+                    CONTACT DEVELOPER
+                </small>
+
+                <strong>
+                    Connect One Developer
+                </strong> -->
+
+                <a href="contact.html" class="mail">
+                    Contact Devoloper
+                </a>
+
+            <!-- </div> -->
+
+        </div>
+
+
+        <div class="menu-button">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                ONE PLATFORM • ENDLESS POSSIBILITIES
+            </div>
+
+            <h1>
+                Welcome to<br>
+                Connect <span>One</span>
+            </h1>
+
+            <div class="hero-line"></div>
+
+            <p class="hero-text">
+
+                One platform for everything you need.
+                Connect, explore, learn, shop, work,
+                travel and enjoy — all in one place.
+
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Connect One services...">
+
+                <button
+                    class="search-button"
+                    onclick="searchService()">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO LOGO -->
+
+        <div class="hero-logo">
+
+            <img src="cont logo1.png"
+                 alt="Connect One">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="services" id="services">
+
+
+        <div class="section-title">
+
+            <h2>
+                Explore <span>Connect One</span>
+            </h2>
+
+            <p>
+                Everything you need, connected in one place.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-grid">
+
+
+            <!-- SOCIAL MEDIA -->
+
+            <a href="social-media.html" class="service-card blue">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+
+                    <h3>
+                        Social Media
+                    </h3>
+
+                    <p>
+                        Stay connected with the world.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- EDUCATION -->
+
+            <a href="#" class="service-card green">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <h3>
+                        Education Know
+                    </h3>
+
+                    <p>
+                        Learn something new every day.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- FOOD -->
+
+            <a href="food.html" class="service-card orange">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+
+                    <h3>
+                        Food
+                    </h3>
+
+                    <p>
+                        Discover food and restaurants.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- TICKET -->
+
+            <a href="ticket-booking.html" class="service-card purple">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <h3>
+                        Ticket Booking
+                    </h3>
+
+                    <p>
+                        Book tickets quickly and easily.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- SHOPPING -->
+
+            <a href="shoping.html" class="service-card pink">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <h3>
+                        Shopping
+                    </h3>
+
+                    <p>
+                        Shop your favorite products.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- JOB -->
+
+            <a href="job-searching.html" class="service-card cyan">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+
+                    <h3>
+                        Job Searching
+                    </h3>
+
+                    <p>
+                        Find your dream job.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- GAMING -->
+
+            <a href="gaming.html" class="service-card purple">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+
+                    <h3>
+                        Online Free Gaming
+                    </h3>
+
+                    <p>
+                        Play, relax and enjoy.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- RESUME -->
+
+            <a href="resume-template.html" class="service-card red">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <h3>
+                        Resume Template
+                    </h3>
+
+                    <p>
+                        Build your professional resume.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- AI -->
+
+            <a href="ai-assistant.html" class="service-card blue">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                    <h3>
+                        AI Assistant
+                    </h3>
+
+                    <p>
+                        Your smart digital helper.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- ENTERTAINMENT -->
+
+            <a href="entertaiment.html" class="service-card red">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+
+                    <h3>
+                        Entertainment
+                    </h3>
+
+                    <p>
+                        Movies, shows and entertainment.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- MUSIC -->
+
+            <a href="music.html" class="service-card purple">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+
+                    <h3>
+                        Music
+                    </h3>
+
+                    <p>
+                        Feel the rhythm of life.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- COURIER -->
+
+            <a href="courier-service.html" class="service-card green">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <h3>
+                        Courier Service
+                    </h3>
+
+                    <p>
+                        Send and receive packages.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+
+            <!-- IMAGE EXPLORE -->
+
+            <a href="image-explore.html" class="service-card blue">
+
+                <div>
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+
+                    <h3>
+                        Image Explore
+                    </h3>
+
+                    <p>
+                        Discover and explore amazing images.
+                    </p>
+
+                </div>
+
+                <div class="service-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about"
+             style="
+             padding:80px 10%;
+             text-align:center;
+             background:#06080d;
+             ">
+
+        <h2 style="font-size:38px;margin-bottom:20px;">
+            About <span style="color:#ff5a00;">
+                Connect One
+            </span>
+        </h2>
+
+        <p style="
+        max-width:800px;
+        margin:auto;
+        color:#999;
+        line-height:1.8;
+        font-size:17px;
+        ">
+
+            Connect One is designed as a single digital
+            platform where people can discover useful
+            services, information, entertainment,
+            education, shopping, jobs and much more.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact"
+             style="
+             padding:70px 20px;
+             text-align:center;
+             background:#05070b;
+             ">
+
+        <h2 style="
+        font-size:36px;
+        margin-bottom:15px;
+        ">
+
+            Contact <span style="color:#ff5a00;">
+                Developer
+            </span>
+
+        </h2>
+
+        <p style="
+        color:#999;
+        margin-bottom:20px;
+        ">
+
+            Have an idea or need help?
+            Contact the Connect One developer.
+
+        </p>
+
+        <a href="mailto:developer@connectone.com"
+           style="
+           display:inline-block;
+           padding:15px 28px;
+           border-radius:30px;
+           background:#ff5a00;
+           color:white;
+           font-weight:bold;
+           ">
+
+            <i class="fa-solid fa-envelope"></i>
+
+           Sarathkumarkh7864@gmail.com
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <strong>
+            Connect One
+        </strong>
+
+        &nbsp; • &nbsp;
+
+        Your World, One Place
+
+        <br><br>
+
+        © 2026 Connect One.
+        All Rights Reserved.
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function searchService() {
+
+            let input =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+            let cards =
+                document.querySelectorAll(".service-card");
+
+            let found = false;
+
+            cards.forEach(function(card) {
+
+                let title =
+                    card.querySelector("h3")
+                    .innerText
+                    .toLowerCase();
+
+                if (title.includes(input) && input !== "") {
+
+                    card.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                    card.style.transform =
+                        "scale(1.08)";
+
+                    card.style.borderColor =
+                        "#ff5a00";
+
+                    setTimeout(function() {
+
+                        card.style.transform =
+                            "";
+
+                    }, 1500);
+
+                    found = true;
+
+                }
+
+            });
+
+
+            if (!found && input !== "") {
+
+                alert(
+                    "Service not found. Please try another service."
+                );
+
+            }
+
+        }
+
+
+        /* ENTER KEY SEARCH */
+
+        document
+            .getElementById("searchInput")
+            .addEventListener(
+                "keypress",
+                function(event) {
+
+                    if (event.key === "Enter") {
+
+                        searchService();
+
+                    }
+
+                }
+            );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1062 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Connect One | Sarathkumar S</title>
+    <link rel="icon" type="image/png" href="icons8-connect-128.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         INTERNAL CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05070b;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        .navbar {
+            width: 100%;
+            height: 85px;
+
+            padding: 0 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(5, 7, 11, 0.95);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(15px);
+        }
+
+
+        /* =====================================================
+           LOGO AREA
+        ====================================================== */
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .main-logo {
+            width: 200px;
+            height: 290px;
+
+            margin-left: -100px;
+            margin-top: 40px;
+
+            object-fit: contain;
+        }
+
+
+        .brand-name {
+            font-size: 27px;
+            font-weight: 800;
+
+            margin-left: -90px;
+
+            white-space: nowrap;
+        }
+
+
+        .brand-name span {
+            color: #ff5a00;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            white-space: nowrap;
+        }
+
+
+        .nav-links a {
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            position: relative;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: #ff5a00;
+        }
+
+
+        .nav-links a.active {
+            color: #ff5a00;
+            font-weight: bold;
+        }
+
+
+        .nav-links a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -9px;
+
+            width: 100%;
+            height: 2px;
+
+            background: #ff5a00;
+        }
+
+
+        /* =====================================================
+           CONTACT DEVELOPER
+        ====================================================== */
+
+        .mail {
+            display: inline-block;
+
+            color: #ff5a00 !important;
+
+            font-size: 14px !important;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border: 1px solid #ff5a00;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            transition: 0.4s;
+        }
+
+
+        .mail:hover {
+            background: #ff5a00;
+            color: white !important;
+
+            box-shadow:
+                0 0 20px rgba(255, 90, 0, 0.4);
+        }
+
+
+        /* =====================================================
+           HERO SECTION
+        ====================================================== */
+
+        .hero {
+            min-height: calc(100vh - 85px);
+
+            padding: 60px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 60px;
+
+            position: relative;
+        }
+
+
+        /* =====================================================
+           LEFT CONTENT
+        ====================================================== */
+
+        .hero-content {
+            width: 55%;
+
+            max-width: 650px;
+        }
+
+
+        /* .welcome-text {
+            color: #ff5a00;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        } */
+
+
+        .hero-content h1 {
+            font-size: clamp(30px, 6vw, 60px);
+
+            line-height: 1.08;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-content h1 span {
+            color: #ff5a00;
+        }
+
+
+        .hero-content h2 {
+            font-size: 28px;
+
+            margin-bottom: 20px;
+
+            color: #ddd;
+        }
+
+
+        .hero-description {
+            color: #999;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            max-width: 600px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ====================================================== */
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 40px;
+        }
+
+
+        .portfolio-btn,
+        .resume-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        /* PORTFOLIO */
+
+        .portfolio-btn {
+            background: #ff5a00;
+
+            color: white;
+
+            border: 1px solid #ff5a00;
+
+            box-shadow:
+                0 0 20px rgba(255, 90, 0, 0.25);
+        }
+
+
+        .portfolio-btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 30px rgba(255, 90, 0, 0.5);
+        }
+
+
+        /* RESUME */
+
+        .resume-btn {
+            background: transparent;
+
+            color: #ff5a00;
+
+            border: 1px solid #ff5a00;
+        }
+
+
+        .resume-btn:hover {
+            background: #ff5a00;
+
+            color: white;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =====================================================
+           SOCIAL MEDIA
+        ====================================================== */
+
+        .social-area {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+
+        .social-title {
+            color: #777;
+
+            font-size: 13px;
+
+            margin-right: 5px;
+        }
+
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #11151c;
+
+            font-size: 20px;
+
+            text-decoration: none;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.10);
+
+            transition: 0.3s;
+        }
+
+
+        .social-icon:hover {
+            transform: translateY(-6px);
+
+            background: #1a2029;
+        }
+
+
+        .whatsapp {
+            color: #25D366;
+        }
+
+
+        .instagram {
+            color: #E4405F;
+        }
+
+
+        .linkedin {
+            color: #0A66C2;
+        }
+
+
+        /* =====================================================
+           RIGHT PHOTO AREA
+        ====================================================== */
+
+        .hero-photo-area {
+            width: 45%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+            min-height: 450px;
+        }
+
+
+        /* =====================================================
+           OUTER RING
+        ====================================================== */
+
+        .outer-ring {
+            position: absolute;
+
+            width: 390px;
+            height: 390px;
+
+            border:
+                2px solid rgba(255, 90, 0, 0.25);
+
+            border-radius: 50%;
+
+            animation:
+                rotateCircle 10s linear infinite;
+        }
+
+
+        /* =====================================================
+           SECOND RING
+        ====================================================== */
+
+        .second-ring {
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border:
+                2px dashed rgba(255, 90, 0, 0.45);
+
+            border-radius: 50%;
+
+            animation:
+                rotateCircleReverse 8s linear infinite;
+        }
+
+
+        /* =====================================================
+           ORANGE GLOW
+        ====================================================== */
+
+        .photo-glow {
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: #ff5a00;
+
+            opacity: 0.12;
+
+            filter: blur(45px);
+        }
+
+
+        /* =====================================================
+           PHOTO
+        ====================================================== */
+
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            padding: 7px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff5a00,
+                    #ffb000,
+                    #ff5a00
+                );
+
+            box-shadow:
+                0 0 35px rgba(255, 90, 0, 0.4);
+
+            position: relative;
+
+            z-index: 5;
+
+            animation:
+                photoFloat 4s ease-in-out infinite;
+        }
+
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            display: block;
+
+            background: #111;
+        }
+
+
+        /* =====================================================
+           FLOATING DOTS
+        ====================================================== */
+
+        .dot-one {
+            position: absolute;
+
+            width: 14px;
+            height: 14px;
+
+            border-radius: 50%;
+
+            background: #ff5a00;
+
+            top: 50px;
+            right: 70px;
+
+            box-shadow:
+                0 0 20px #ff5a00;
+
+            animation:
+                dotMove 3s ease-in-out infinite;
+        }
+
+
+        .dot-two {
+            position: absolute;
+
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: #ffb000;
+
+            bottom: 80px;
+            left: 80px;
+
+            box-shadow:
+                0 0 15px #ffb000;
+
+            animation:
+                dotMove 4s ease-in-out infinite;
+        }
+
+
+        /* =====================================================
+           ANIMATIONS
+        ====================================================== */
+
+        @keyframes rotateCircle {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        @keyframes rotateCircleReverse {
+
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+
+        }
+
+
+        @keyframes photoFloat {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes dotMove {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 1200px) {
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                height: 75px;
+            }
+
+
+            .main-logo {
+                width: 80px;
+                height: 100px;
+
+                margin-left: -25px;
+                margin-top: 10px;
+            }
+
+
+            .brand-name {
+                font-size: 22px;
+                margin-left: -25px;
+            }
+
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                padding: 70px 7%;
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .hero-content {
+                width: 100%;
+                max-width: 700px;
+            }
+
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+
+            .social-area {
+                justify-content: center;
+            }
+
+
+            .hero-photo-area {
+                width: 100%;
+
+                min-height: 400px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+                padding: 50px 5%;
+            }
+
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+
+            .hero-content h2 {
+                font-size: 22px;
+            }
+
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+
+            .outer-ring {
+                width: 310px;
+                height: 310px;
+            }
+
+
+            .second-ring {
+                width: 280px;
+                height: 280px;
+            }
+
+
+            .profile-photo {
+                width: 220px;
+                height: 220px;
+            }
+
+
+            .photo-glow {
+                width: 230px;
+                height: 230px;
+            }
+
+
+            .dot-one {
+                right: 30px;
+            }
+
+
+            .dot-two {
+                left: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="logo-area">
+
+            <img
+                src="logo 2.png"
+                class="main-logo"
+                alt="Connect One Logo"
+            >
+
+
+            <div class="brand-name">
+
+                Connect
+                <span>One</span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav-links">
+
+
+            <a href="index.html"
+               class="active">
+                Home
+            </a>
+
+
+            
+
+           
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+
+        <!-- LEFT -->
+
+        <div class="hero-content">
+
+
+            <!-- <div class="welcome-text">
+                WELCOME TO CONNECT ONE
+            </div> -->
+
+
+            <h1>
+
+                Hi Everyone,
+
+                <br>
+
+                I'm
+                <span>
+                    Sarathkumar S
+                </span>
+
+            </h1>
+
+
+            <h2>
+                Full Stack Developer
+            </h2>
+
+
+            <p class="hero-description">
+
+                I build modern, responsive and user-friendly
+                web applications using front-end and
+                back-end technologies.
+
+            </p>
+
+
+
+            <!-- BUTTONS -->
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="https://sarath-code-boy.github.io/sarath_portfolio/"
+                    class="portfolio-btn"
+                >
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    Portfolio
+
+                </a>
+
+
+                <a
+                    href="sarath Resume.pdf"
+                    target="_blank"
+                    class="resume-btn"
+                >
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Check Resume Now
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- SOCIAL MEDIA -->
+
+            <div class="social-area">
+
+
+                <span class="social-title">
+                    Connect with me
+                </span>
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/9025004557"
+                    target="_blank"
+                    class="social-icon whatsapp"
+                >
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://www.instagram.com/ss_editz_sarath/"
+                    target="_blank"
+                    class="social-icon instagram"
+                >
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+
+                <!-- LINKEDIN -->
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="social-icon linkedin"
+                >
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RIGHT PHOTO -->
+
+        <div class="hero-photo-area">
+
+
+            <!-- OUTER RING -->
+
+            <div class="outer-ring"></div>
+
+
+            <!-- SECOND RING -->
+
+            <div class="second-ring"></div>
+
+
+            <!-- GLOW -->
+
+            <div class="photo-glow"></div>
+
+
+            <!-- PHOTO -->
+
+            <div class="profile-photo">
+
+                <img
+                    src="unnamed.jpg"
+                    alt="Sarathkumar S"
+                >
+
+            </div>
+
+
+            <!-- FLOATING DOTS -->
+
+            <div class="dot-one"></div>
+
+            <div class="dot-two"></div>
+
+
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>
